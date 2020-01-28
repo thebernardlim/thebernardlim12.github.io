@@ -18,10 +18,6 @@ urls:
       url: /
     - text: Blog
       url: /blog
-    - text: Shop
-      url : /shop
-    - text: Sample Page
-      url: /sample-page
     - text: Contact Me
       url : /contact
 
