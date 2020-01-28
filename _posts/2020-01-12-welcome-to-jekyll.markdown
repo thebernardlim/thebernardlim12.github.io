@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Welcome to Jekyll!"
-author: Sujay Kundu
+author: Bernard Lim
 date:   2020-01-12 01:00:12 +0530
 category: jekyll
 summary: This is the first post
