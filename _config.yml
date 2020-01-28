@@ -6,8 +6,8 @@ subtitle: Full Stack Web Developer
 email: sujaykundu777@gmail.com  # Your Email
 description: >-  
   Sujay Kundu is Web Developer and Blogger
-baseurl: "/devlopr-starter" # the subpath of your site, e.g. /blog
-url: "https://sujaykundu.com" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://thebernardlim.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: xplor4r
 github_username:  sujaykundu777
 
