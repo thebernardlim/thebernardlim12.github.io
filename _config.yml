@@ -1,15 +1,15 @@
 
 # Site Settings
 
-title: Sujay Kundu  # Your Title 
+title: Bernard Lim  # Your Title 
 subtitle: Full Stack Web Developer 
-email: sujaykundu777@gmail.com  # Your Email
+email: thebernardlim@gmail.com  # Your Email
 description: >-  
-  Sujay Kundu is Web Developer and Blogger
+  Tech Enthusiast
 baseurl: "/devlopr-starter" # the subpath of your site, e.g. /blog
-url: "https://sujaykundu.com" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: xplor4r
-github_username:  sujaykundu777
+url: "https://thebernardlim.github.com" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: 
+github_username:  thebernardlim
 
 # Navigation 
 
@@ -28,28 +28,28 @@ urls:
 # Author Details
 
 author_logo: profile.jpg
-author: Sujay Kundu
-author_bio: Hi, My Name is Sujay Kundu. I love to Code and Design. devlopr-jekyll is a theme built for developers.  
-author_email: "sujaykundu777@gmail.com"
-author_location: India
-author_website_url: "https://sujaykundu.com"
+author: Bernard Lim
+author_bio: 
+author_email: "thebernardlim@gmail.com"
+author_location: Hong Kong
+author_website_url: "https://thebernardlim.com"
 
 # social links
-twitter_username: xplor4r
-github_username:  sujaykundu777
-facebook_username: sujay.kundu2
-linkedin_username: sujaykundu
-behance_username: sujaykundu
-instagram_username: xplor4r
-medium_username: sujaykundu
-telegram_username: sujaykundu
-dribbble_username: sujaykundu777
-flickr_username: sujaykundu777
+twitter_username: 
+github_username:  thebernardlim
+facebook_username: 
+linkedin_username: 
+behance_username: 
+instagram_username: 
+medium_username: 
+telegram_username: 
+dribbble_username: 
+flickr_username: 
 
 # Choose what to show ( true - display or false - don't display)
-show_author_work_experiences: true
-show_author_education_details: true
-show_author_project_details: true
+show_author_work_experiences: false
+show_author_education_details: false
+show_author_project_details: false
 
 author_work_experiences: 
             - company_name: Google
@@ -86,10 +86,10 @@ author_project_details:
                 visibility: true
                 
 #for comments using disqus
-disqus_shortname: sujay-kundu  
+disqus_shortname:  
 
 # wakatime username
-wakatime_username: sujaykundu777
+wakatime_username: 
 
 # syntax highlighter
 markdown: kramdown
