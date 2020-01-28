@@ -6,7 +6,7 @@ subtitle: Full Stack Web Developer
 email: thebernardlim@gmail.com  # Your Email
 description: >-  
   Tech Enthusiast
-baseurl: "/devlopr-starter" # the subpath of your site, e.g. /blog
+baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://thebernardlim.github.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: thebernardlim
 github_username:  thebernardlim
