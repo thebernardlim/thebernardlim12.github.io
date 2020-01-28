@@ -8,7 +8,7 @@ description: >-
   Tech Enthusiast
 baseurl: "/devlopr-starter" # the subpath of your site, e.g. /blog
 url: "https://thebernardlim.github.com" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: 
+twitter_username: thebernardlim
 github_username:  thebernardlim
 
 # Navigation 
@@ -29,7 +29,7 @@ urls:
 
 author_logo: profile.jpg
 author: Bernard Lim
-author_bio: 
+author_bio: Tech Enthusiast
 author_email: "thebernardlim@gmail.com"
 author_location: Hong Kong
 author_website_url: "https://thebernardlim.com"
@@ -47,9 +47,9 @@ dribbble_username:
 flickr_username: 
 
 # Choose what to show ( true - display or false - don't display)
-show_author_work_experiences: false
-show_author_education_details: false
-show_author_project_details: false
+show_author_work_experiences: true
+show_author_education_details: true
+show_author_project_details: true
 
 author_work_experiences: 
             - company_name: Google
