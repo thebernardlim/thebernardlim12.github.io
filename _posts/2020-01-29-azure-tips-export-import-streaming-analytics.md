@@ -24,13 +24,13 @@ One way to export a Streaming Analytics job is through **Visual Studio Code**
 
 2. Click on the **Azure** tab. **Stream Analytics** extension should appear.
 
-![sa extension](/assets/img/posts/2020-01-29-azure-tips-export-import-streaming-analytics/sa-extension.png)
+![sa extension](/assets/img/posts/2020-01-29-azure-tips-export-import-streaming-analytics/sa-extension.PNG)
 
 3. Sign in to your Azure account and a list of existing Streaming Analytics jobs should appear.
 
 4. Browse over the job you would like to export and click on the 'Download' button. The job template will not be saved to your local.
 
-![sa jobs](/assets/img/posts/2020-01-29-azure-tips-export-import-streaming-analytics/sa-jobs.png)
+![sa jobs](/assets/img/posts/2020-01-29-azure-tips-export-import-streaming-analytics/sa-jobs.PNG)
 
 ## Importing / Submitting Jobs
 
@@ -40,4 +40,4 @@ One way to export a Streaming Analytics job is through **Visual Studio Code**
 
 3. On the top of the file, there will be a **Submit to Azure** option. On click, here you can choose the subscription you would like to deploy the job to.
 
-![sa submit](/assets/img/posts/2020-01-29-azure-tips-export-import-streaming-analytics/sa-submit.png)
+![sa submit](/assets/img/posts/2020-01-29-azure-tips-export-import-streaming-analytics/sa-submit.PNG)
