@@ -2,7 +2,7 @@
 layout: post
 title:  "Azure Data Engineer Associate Certification Guide"
 author: Bernard Lim
-date:   2020-01-29 00:00:12 +0530
+date:   2020-02-04 00:00:12 +0530
 category: certification
 summary: Sharing my experience to getting certified for the Azure Data Engineer Associate certification
 thumbnail: certification.jpg
