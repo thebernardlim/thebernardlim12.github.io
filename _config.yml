@@ -6,7 +6,7 @@ subtitle: Passionate about everything around software development, cloud and dat
 email: thebernardlim@gmail.com  # Your Email
 description: >-  
   Bernard Lim 
-baseurl: "/blog" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://thebernardlim.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: thebernardlim
 github_username:  thebernardlim
@@ -15,7 +15,7 @@ github_username:  thebernardlim
 
 urls:
     - text: Blog
-      url: /blog
+      url: /
     - text: About
       url: /about
     - text: Contact Me
