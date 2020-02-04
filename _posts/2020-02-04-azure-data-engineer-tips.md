@@ -10,7 +10,6 @@ thumbnail: certification.jpg
 
 # Azure Data Engineer Associate Certification Guide
 
-## Strategy
 
 ### Step 1 - Download & Print the 'Exam Skills Outline' document
 
