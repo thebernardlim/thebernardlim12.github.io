@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Jekyll
+title: Azure
 permalink: /blog/categories/azure
 ---
  
