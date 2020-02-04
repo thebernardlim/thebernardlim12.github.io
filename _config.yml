@@ -15,7 +15,7 @@ github_username:  thebernardlim
 
 urls:
     - text: Blog
-      url: /
+      url: /blog
     - text: About
       url: /about
     - text: Contact Me
