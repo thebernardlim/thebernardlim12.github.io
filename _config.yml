@@ -14,10 +14,10 @@ github_username:  thebernardlim
 # Navigation 
 
 urls:
-    - text: About
-      url: /
     - text: Blog
       url: /blog
+    - text: About
+      url: /
     - text: Contact Me
       url : /contact
 
