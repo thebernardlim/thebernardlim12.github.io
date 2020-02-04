@@ -5,7 +5,7 @@ author: Bernard Lim
 date:   2020-01-29 00:01:12 +0530
 category: azure
 summary: Export / Import Streaming Analytics using Visual Studio Code
-thumbnail: hello.jpg
+thumbnail: cloud.jpg
 ---
 
 # Export / Import Streaming Analytics Job

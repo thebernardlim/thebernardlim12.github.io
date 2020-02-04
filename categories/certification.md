@@ -8,7 +8,7 @@ permalink: /blog/categories/certification
 
 <div class="card">
 <!-- Change the category here -->
-{% for post in site.categories.azure %}
+{% for post in site.categories.certification %}
  <li class="category-posts"><span>{{ post.date | date_to_string }}</span> &nbsp; <a href="{{ post.url }}">{{ post.title }}</a></li>
 {% endfor %}
 </div>
