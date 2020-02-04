@@ -4,11 +4,11 @@ title:  "Azure Data Engineer Associate Certification Study Notes"
 author: Bernard Lim
 date:   2020-01-29 00:00:12 +0530
 category: certification
-summary: Quick notes taken during the studying for the Azure Data Engineer Associate certification 
+summary: Azure Data Engineer Associate certification study notes 
 thumbnail: certification.jpg
 ---
 
-# DP-200 / DP-201 Study Notes
+# Azure Data Engineer Associate Certification Study Notes
 
 ## Azure Databricks
 
