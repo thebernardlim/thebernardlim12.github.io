@@ -18,8 +18,8 @@ urls:
       url: /blog
     - text: About
       url: /about
-    - text: Contact Me
-      url : /contact
+    #- text: Contact Me
+    #  url : /contact
 
 # Author Details
 
