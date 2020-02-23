@@ -5,7 +5,7 @@ author: Bernard Lim
 date:   2020-02-23 00:00:00 +0000
 category: azure
 summary: Guide on setting up Azure Elastic Jobs
-thumbnail: cloud.jpg
+thumbnail: elasticjobagents.png
 ---
 
 # Azure Elastic Job Setup Guide
@@ -131,13 +131,13 @@ EXEC jobs.sp_add_job
 
 ```
 2. Add job steps for job
+
 ```sql
 -- Add job step for create table
 EXEC jobs.sp_add_jobstep @job_name='Step1',
 @command=N'EXEC [dbo].[teststoredproc] ',
 @credential_name='myjobcred',
 @target_group_name='Group1'
-
 ```
 
 ## Official References
