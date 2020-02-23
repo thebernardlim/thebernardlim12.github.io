@@ -42,7 +42,7 @@ thumbnail: elasticjobagents.png
 
 ## Create Elastic Job Agent
 
-1. Type  ‘Elastic Job Agents’ on Search box located at the top of the page. Click on ‘Elastic Job Agents’ option.
+1. Type  ‘Elastic Job Agents’ on Search box located at the top of the page. Click on ‘Elastic Job Agents’ option. <br/>
 ![s0](/assets/img/posts/2020-02-23-azure-elastic-jobs-setup/create-elastic-job-agent-1.png)
 {:class="img-fluid"}
 
@@ -58,7 +58,7 @@ c. Click on ‘Job database’, and select the server and Jobs Database which wa
 ![elasticjob3](/assets/img/posts/2020-02-23-azure-elastic-jobs-setup/create-elastic-job-agent-3.png){:class="img-fluid"}
 
 4. Click on ‘Create’ to create Job Agent
-5. To verify that the Elastic Job Agent has successfully connected to the Jobs Database, access the Jobs Database through SQL Server Management Studio. A number of tables & stored procedures should have been created to indicate successful connection.
+5. To verify that the Elastic Job Agent has successfully connected to the Jobs Database, access the Jobs Database through SQL Server Management Studio. A number of tables & stored procedures should have been created to indicate successful connection. <br/>
 ![elasticjob4](/assets/img/posts/2020-02-23-azure-elastic-jobs-setup/create-elastic-job-agent-4.PNG){:class="img-fluid"}
 
 ## Create Elastic Job
