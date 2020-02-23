@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Azure Database Scheduled Jobs - Azure Elastic Jobs Setup Guide"
+title:  "Azure Elastic Jobs - Setup Guide"
 author: Bernard Lim
 date:   2020-02-23 00:00:00 +0000
 category: azure
@@ -37,13 +37,15 @@ thumbnail: elasticjobagents.png
 ## Enable access to Jobs Database from client machine
 
 1. Ensure that the Job SQL Server firewall allows access to your client, by clicking ‘Set server firewall’ and subsequently adding your Client IP.
+![enableaccess](/assets/img/posts/2020-02-23-azure-elastic-jobs-setup/enable-access-1.png)
+ 
 
 ## Create Elastic Job Agent
 
 1. Type  ‘Elastic Job Agents’ on Search box located at the top of the page. Click on ‘Elastic Job Agents’ option.
 ![elasticjob1](/assets/img/posts/2020-02-23-azure-elastic-jobs-setup/create-elastic-job-agent-1.png)
 
-2. Click on ‘Add’.
+2. Click on ‘Add’.\
 ![elasticjob2](/assets/img/posts/2020-02-23-azure-elastic-jobs-setup/create-elastic-job-agent-2.png)
 
 3. On the ‘Elastic Job agent’ page,
@@ -52,9 +54,11 @@ a. Fill up the following fields: \
      ii. Subscription - Subscription – Subscription where Elastic Job costs will be billed against \
 b. Click on ‘Preview terms’ and check the checkbox to accept the terms. \
 c. Click on ‘Job database’, and select the server and Jobs Database which was created earlier.
+![elasticjob3](/assets/img/posts/2020-02-23-azure-elastic-jobs-setup/create-elastic-job-agent-3.png)
 
 4. Click on ‘Create’ to create Job Agent
 5. To verify that the Elastic Job Agent has successfully connected to the Jobs Database, access the Jobs Database through SQL Server Management Studio. A number of tables & stored procedures should have been created to indicate successful connection.
+![elasticjob4](/assets/img/posts/2020-02-23-azure-elastic-jobs-setup/create-elastic-job-agent-4.png)
 
 ## Create Elastic Job
 

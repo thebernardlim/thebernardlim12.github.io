@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Azure Tips: Export / Import Streaming Analytics Jobs"
+title:  "Azure Streaming Analytics: Export / Import Streaming Analytics Jobs"
 author: Bernard Lim
 date:   2020-01-29 00:01:12 +0530
 category: azure
