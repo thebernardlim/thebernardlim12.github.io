@@ -40,4 +40,4 @@ One way to export a Streaming Analytics job is through **Visual Studio Code**
 
 3. On the top of the file, there will be a **Submit to Azure** option. On click, here you can choose the subscription you would like to deploy the job to.
 
-![sa submit](/assets/img/posts/2020-01-29-azure-tips-export-import-streaming-analytics/sa-submit.PNG)
+![sa submit](/assets/img/posts/2020-01-29-azure-tips-export-import-streaming-analytics/sa-submit.PNG =650x)
