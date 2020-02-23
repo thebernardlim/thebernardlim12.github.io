@@ -12,7 +12,7 @@ thumbnail: elasticjobagents.png
 
 ## Create Jobs Database
 
-1. Login to Azure Portal.\
+1. Login to Azure Portal. <br/>
 ![sql db](/assets/img/posts/2020-02-23-azure-elastic-jobs-setup/create-jobs-db-1.png)
 
 2. Type ‘SQL Databases’ on Search box located at the top of the page. Click on ‘SQL databases’ option.
@@ -20,10 +20,11 @@ thumbnail: elasticjobagents.png
  
 3. Click on ‘Add’ within the ‘SQL databases’ page.
  
-4. In the ‘Create SQL Database’ page, fill in the following fields accordingly:\
-    **Subscription** – Subscription where Jobs Database will be billed against\
-    **Resource group** – Resource group to logically group Jobs Database\
-    **Database name** – Name of Jobs Database\
+4. In the ‘Create SQL Database’ page, fill in the following fields accordingly: <br/>
+
+    **Subscription** – Subscription where Jobs Database will be billed against <br/>
+    **Resource group** – Resource group to logically group Jobs Database <br/>
+    **Database name** – Name of Jobs Database <br/>
     **Server** – Choose SQL Server to host Jobs Database
 
 5. Click on ‘Configure database’ for ‘Compute + storage’ field
@@ -42,14 +43,14 @@ thumbnail: elasticjobagents.png
 1. Type  ‘Elastic Job Agents’ on Search box located at the top of the page. Click on ‘Elastic Job Agents’ option.
 <img src="/assets/img/posts/2020-02-23-azure-elastic-jobs-setup/create-elastic-job-agent-1.png" width="650px" />
 
-2. Click on ‘Add’.\
+2. Click on ‘Add’. <br/>
 ![elasticjob2](/assets/img/posts/2020-02-23-azure-elastic-jobs-setup/create-elastic-job-agent-2.png)
 
-3. On the ‘Elastic Job agent’ page,\
-a. Fill up the following fields: \
-   **Name** – Name of Job Agent \
-   **Subscription** – Subscription where Elastic Job costs will be billed against \
-b. Click on ‘Preview terms’ and check the checkbox to accept the terms. \
+3. On the ‘Elastic Job agent’ page, <br/>
+a. Fill up the following fields:  <br/>
+   **Name** – Name of Job Agent <br/> 
+   **Subscription** – Subscription where Elastic Job costs will be billed against <br/>
+b. Click on ‘Preview terms’ and check the checkbox to accept the terms. <br/>
 c. Click on ‘Job database’, and select the server and Jobs Database which was created earlier.
 ![elasticjob3](/assets/img/posts/2020-02-23-azure-elastic-jobs-setup/create-elastic-job-agent-3.png)
 
