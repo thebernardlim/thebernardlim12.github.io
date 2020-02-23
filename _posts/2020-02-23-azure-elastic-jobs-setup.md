@@ -45,10 +45,10 @@ thumbnail: elasticjobagents.png
 2. Click on ‘Add’.
 ![elasticjob2](/assets/img/posts/2020-02-23-azure-elastic-jobs-setup/create-elastic-job-agent-2.png)
 
-3. On the ‘Elastic Job agent’ page,
+3. On the ‘Elastic Job agent’ page,\
 a. Fill up the following fields: \
-     i. Name – Name of Job Agent \
-     ii. Subscription - Subscription – Subscription where Elastic Job costs will be billed against \
+   **Name** – Name of Job Agent \
+   **Subscription** – Subscription where Elastic Job costs will be billed against \
 b. Click on ‘Preview terms’ and check the checkbox to accept the terms. \
 c. Click on ‘Job database’, and select the server and Jobs Database which was created earlier.
 ![elasticjob3](/assets/img/posts/2020-02-23-azure-elastic-jobs-setup/create-elastic-job-agent-3.png)
