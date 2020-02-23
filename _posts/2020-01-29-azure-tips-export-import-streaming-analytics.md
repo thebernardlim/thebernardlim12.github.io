@@ -31,6 +31,7 @@ One way to export a Streaming Analytics job is through **Visual Studio Code**
 4. Browse over the job you would like to export and click on the 'Download' button. The job template will not be saved to your local.
 
 ![sa jobs](/assets/img/posts/2020-01-29-azure-tips-export-import-streaming-analytics/sa-jobs.PNG)
+<img src="/assets/img/posts/2020-01-29-azure-tips-export-import-streaming-analytics/sa-jobs.PNG" width="650px" />
 
 ## Importing / Submitting Jobs
 
