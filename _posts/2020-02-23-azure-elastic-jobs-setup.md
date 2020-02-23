@@ -55,7 +55,7 @@ c. Click on ‘Job database’, and select the server and Jobs Database which wa
 
 4. Click on ‘Create’ to create Job Agent
 5. To verify that the Elastic Job Agent has successfully connected to the Jobs Database, access the Jobs Database through SQL Server Management Studio. A number of tables & stored procedures should have been created to indicate successful connection.
-![elasticjob4](/assets/img/posts/2020-02-23-azure-elastic-jobs-setup/create-elastic-job-agent-4.png)
+![elasticjob4](/assets/img/posts/2020-02-23-azure-elastic-jobs-setup/create-elastic-job-agent-4.PNG)
 
 ## Create Elastic Job
 
