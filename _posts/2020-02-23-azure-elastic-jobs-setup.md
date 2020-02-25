@@ -145,5 +145,5 @@ EXEC jobs.sp_add_jobstep @job_name='Step1',
 
 ## Official References
 
-https://docs.microsoft.com/bs-cyrl-ba/azure//sql-database/sql-database-job-automation-overview#elastic-database-jobs-preview
-https://docs.microsoft.com/en-us/azure/sql-database/elastic-jobs-tsql
+<https://docs.microsoft.com/bs-cyrl-ba/azure//sql-database/sql-database-job-automation-overview#elastic-database-jobs-preview> <br/>
+<https://docs.microsoft.com/en-us/azure/sql-database/elastic-jobs-tsql>
