@@ -121,7 +121,7 @@ collections:
 
 # Build settings
 
-theme: devlopr
+theme: jekyll-theme-dinky
 plugins:
   - jekyll-feed
   - jekyll-paginate
