@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://thebernardlim.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://thebernardlim.github.io/" rel="alternate" type="text/html" /><updated>2020-02-25T03:08:15+00:00</updated><id>https://thebernardlim.github.io/feed.xml</id><title type="html">Bernard Lim</title><subtitle>Bernard Lim </subtitle><author><name>Bernard Lim</name></author><entry><title type="html">Azure Elastic Jobs - Setup Guide</title><link href="https://thebernardlim.github.io/azure/2020/02/23/azure-elastic-jobs-setup/" rel="alternate" type="text/html" title="Azure Elastic Jobs - Setup Guide" /><published>2020-02-23T00:00:00+00:00</published><updated>2020-02-23T00:00:00+00:00</updated><id>https://thebernardlim.github.io/azure/2020/02/23/azure-elastic-jobs-setup</id><content type="html" xml:base="https://thebernardlim.github.io/azure/2020/02/23/azure-elastic-jobs-setup/">&lt;h1 id=&quot;azure-elastic-job-setup-guide&quot;&gt;Azure Elastic Job Setup Guide&lt;/h1&gt;
+
+&lt;h2 id=&quot;create-jobs-database&quot;&gt;Create Jobs Database&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Login to Azure Portal. &lt;br /&gt;
+&lt;img src=&quot;/assets/img/posts/2020-02-23-azure-elastic-jobs-setup/create-jobs-db-1.png&quot; alt=&quot;sql db&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Type ‘SQL Databases’ on Search box located at the top of the page. Click on ‘SQL databases’ option.
+&lt;img src=&quot;/assets/img/posts/2020-02-23-azure-elastic-jobs-setup/create-jobs-db-2.png&quot; alt=&quot;add sql db&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Click on ‘Add’ within the ‘SQL databases’ page.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;In the ‘Create SQL Database’ page, fill in the following fields accordingly: &lt;br /&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;Subscription&lt;/strong&gt; – Subscription where Jobs Database will be billed against &lt;br /&gt;
+ &lt;strong&gt;Resource group&lt;/strong&gt; – Resource group to logically group Jobs Database &lt;br /&gt;
+ &lt;strong&gt;Database name&lt;/strong&gt; – Name of Jobs Database &lt;br /&gt;
+ &lt;strong&gt;Server&lt;/strong&gt; – Choose SQL Server to host Jobs Database&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Click on ‘Configure database’ for ‘Compute + storage’ field&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;In the ‘Configure’ page, choose a tier which will be either ‘Standard’ or beyond. Elastic Jobs Databases will require a &lt;strong&gt;tier of S0 and above&lt;/strong&gt;
+&lt;img src=&quot;/assets/img/posts/2020-02-23-azure-elastic-jobs-setup/create-jobs-db-3.png&quot; alt=&quot;s0&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Fill up remaining fields as per required, and proceed to click ‘Review + Create’ to create Jobs Database.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;enable-access-to-jobs-database-from-client-machine&quot;&gt;Enable access to Jobs Database from client machine&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Ensure that the Job SQL Server firewall allows access to your client, by clicking ‘Set server firewall’ and subsequently adding your Client IP.
+&lt;img src=&quot;/assets/img/posts/2020-02-23-azure-elastic-jobs-setup/enable-access-1.png&quot; alt=&quot;s0&quot; class=&quot;img-fluid&quot; /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;create-elastic-job-agent&quot;&gt;Create Elastic Job Agent&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Type  ‘Elastic Job Agents’ on Search box located at the top of the page. Click on ‘Elastic Job Agents’ option. &lt;br /&gt;
+&lt;img src=&quot;/assets/img/posts/2020-02-23-azure-elastic-jobs-setup/create-elastic-job-agent-1.png&quot; alt=&quot;s0&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Click on ‘Add’. &lt;br /&gt;
+&lt;img src=&quot;/assets/img/posts/2020-02-23-azure-elastic-jobs-setup/create-elastic-job-agent-2.png&quot; alt=&quot;elasticjob2&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;On the ‘Elastic Job agent’ page, &lt;br /&gt;
+a. Fill up the following fields:  &lt;br /&gt;
+&lt;strong&gt;Name&lt;/strong&gt; – Name of Job Agent &lt;br /&gt; 
+&lt;strong&gt;Subscription&lt;/strong&gt; – Subscription where Elastic Job costs will be billed against &lt;br /&gt;
+b. Click on ‘Preview terms’ and check the checkbox to accept the terms. &lt;br /&gt;
+c. Click on ‘Job database’, and select the server and Jobs Database which was created earlier.
+&lt;img src=&quot;/assets/img/posts/2020-02-23-azure-elastic-jobs-setup/create-elastic-job-agent-3.png&quot; alt=&quot;elasticjob3&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Click on ‘Create’ to create Job Agent&lt;/li&gt;
+  &lt;li&gt;To verify that the Elastic Job Agent has successfully connected to the Jobs Database, access the Jobs Database through SQL Server Management Studio. A number of tables &amp;amp; stored procedures should have been created to indicate successful connection. &lt;br /&gt;
+&lt;img src=&quot;/assets/img/posts/2020-02-23-azure-elastic-jobs-setup/create-elastic-job-agent-4.PNG&quot; alt=&quot;elasticjob4&quot; class=&quot;img-fluid&quot; /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;create-elastic-job&quot;&gt;Create Elastic Job&lt;/h2&gt;
+
+&lt;h3 id=&quot;job-database-server-configurations&quot;&gt;Job Database Server Configurations&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Connect to the Job Database Server through SSMS.&lt;/li&gt;
+  &lt;li&gt;Create Database Scoped Credential.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;--Connect to the job database specified when creating the job agent&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;-- Create a db master key if one does not already exist, using your own password.  &lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MASTER&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;KEY&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ENCRYPTION&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PASSWORD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'&amp;lt;EnterStrongPasswordHere&amp;gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+  
+&lt;span class=&quot;c1&quot;&gt;-- Create a database scoped credential – Identity used to execute job against target database &lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;DATABASE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SCOPED&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CREDENTIAL&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myjobcred&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WITH&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;IDENTITY&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'jobcred'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;SECRET&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&amp;lt;EnterStrongPasswordHere&amp;gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
+&lt;span class=&quot;k&quot;&gt;GO&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;-- Create a database scoped credential – Identity to connect to master database&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;DATABASE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SCOPED&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CREDENTIAL&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mymastercred&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WITH&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;IDENTITY&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'mastercred'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;SECRET&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&amp;lt;EnterStrongPasswordHere&amp;gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
+&lt;span class=&quot;k&quot;&gt;GO&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Create a Target Group&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;-- Add a target group containing server(s)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;EXEC&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jobs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sp_add_target_group&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&amp;lt;Target Group Name&amp;gt;'&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;-- Add a server target member&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;EXEC&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jobs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sp_add_target_group_member&lt;/span&gt;
+&lt;span class=&quot;s1&quot;&gt;'&amp;lt;Target Group Name&amp;gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;target_type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'SqlServer'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;refresh_credential_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'mymastercred'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;--credential required to refresh the databases in server&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;server_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'&amp;lt;Target Database Server Name&amp;gt;'&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;target-database-server-configurations&quot;&gt;Target Database Server Configurations&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Connect to the &lt;em&gt;Target Database Server&lt;/em&gt; through SSMS&lt;/li&gt;
+  &lt;li&gt;Create Login &amp;amp; User objects in master database in target database server&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;-- Create 'mastercred' Login &amp;amp; User in target server master db&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;LOGIN&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mastercred&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WITH&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PASSWORD&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Password1'&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;USER&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mastercred&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;LOGIN&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mastercred&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;-- Create 'jobcred' Login in target server master db&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;LOGIN&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jobcred&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WITH&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PASSWORD&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Password1'&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ol&gt;
+  &lt;li&gt;Create user object to run queries and grant required permissions in target database
+```sql
+– Create ‘jobcred’ User in target server target db
+CREATE USER jobcred FROM LOGIN jobcred&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;– Grant required permissions to user
+GRANT ALTER ON SCHEMA::dbo TO jobcred
+GRANT SELECT,UPDATE,INSERT,DELETE,EXEC TO jobcred&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+### Job Database – Add Job
+
+1. Add job (and specify frequency)
+```sql
+-- Add job
+EXEC jobs.sp_add_job 
+	@job_name='BatchUpdateJob',
+	@description='Job to run to update x tables',
+	@schedule_interval_type='Hours',
+	@schedule_interval_count=1
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ol&gt;
+  &lt;li&gt;Add job steps for job&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;-- Add job step for create table&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;EXEC&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jobs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sp_add_jobstep&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;job_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Step1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;command&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'EXEC [dbo].[teststoredproc] '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;credential_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'myjobcred'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;target_group_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Group1'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;official-references&quot;&gt;Official References&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://docs.microsoft.com/bs-cyrl-ba/azure//sql-database/sql-database-job-automation-overview#elastic-database-jobs-preview&quot;&gt;https://docs.microsoft.com/bs-cyrl-ba/azure//sql-database/sql-database-job-automation-overview#elastic-database-jobs-preview&lt;/a&gt; &lt;br /&gt;
+&lt;a href=&quot;https://docs.microsoft.com/en-us/azure/sql-database/elastic-jobs-tsql&quot;&gt;https://docs.microsoft.com/en-us/azure/sql-database/elastic-jobs-tsql&lt;/a&gt;&lt;/p&gt;</content><author><name>Bernard Lim</name></author><category term="azure" /><summary type="html">Azure Elastic Job Setup Guide</summary></entry><entry><title type="html">Azure Data Engineer Associate Certification Guide</title><link href="https://thebernardlim.github.io/certification/2020/02/03/azure-data-engineer-tips/" rel="alternate" type="text/html" title="Azure Data Engineer Associate Certification Guide" /><published>2020-02-03T18:30:12+00:00</published><updated>2020-02-03T18:30:12+00:00</updated><id>https://thebernardlim.github.io/certification/2020/02/03/azure-data-engineer-tips</id><content type="html" xml:base="https://thebernardlim.github.io/certification/2020/02/03/azure-data-engineer-tips/">&lt;h1 id=&quot;azure-data-engineer-associate-certification-guide&quot;&gt;Azure Data Engineer Associate Certification Guide&lt;/h1&gt;
+
+&lt;h3 id=&quot;step-1---download--print-the-exam-skills-outline-document&quot;&gt;Step 1 - Download &amp;amp; Print the ‘Exam Skills Outline’ document&lt;/h3&gt;
+
+&lt;p&gt;With any certification, I will usually first download the ‘Skills Measured’ document from the official Microsoft certification page which will enlist the technologies and its aspects it will test upon.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3Vzx2&quot;&gt;DP-200 Exam Outline&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3VRMb&quot;&gt;DP-201 Exam Outline&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;Note: Microsoft regularly updates its exam syllabus hence it is very important to check the official pages for announcements on exam changes / retirements etc.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Below are the official exam pages links:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/learn/certifications/exams/dp-200&quot;&gt;DP-200 Exam Page&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/learn/certifications/exams/dp-201&quot;&gt;DP-201 Exam Page&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I will usually paste the contents into an Excel spreadsheet and print it out as a simple checklist I can refer to and easily visualized.&lt;/p&gt;
+
+&lt;h3 id=&quot;step-2---studying-with-microsoft-learn&quot;&gt;Step 2 - Studying with Microsoft Learn&lt;/h3&gt;
+
+&lt;p&gt;For both these exams, there is a prepared &lt;strong&gt;Microsoft Learn&lt;/strong&gt; guide already prepared by the folks at Microsoft&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RWuAzL&quot;&gt;Microsoft Learn &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I personally think this is the best introductory study material as it is well-structured and friendly to someone new to the technologies. It comes with prepared labs, sandboxes, properly arranged topics, quizzes and also an element of gamification so things are not so dry.&lt;/p&gt;
+
+&lt;p&gt;While learning, I will usually take notes for key points or questions that I think will be useful for future easy revision/further research.&lt;/p&gt;
+
+&lt;p&gt;I have also uploaded some of my &lt;a href=&quot;https://thebernardlim.github.io/certification/2020/01/28/dp-200-exam-guide/&quot;&gt;study notes&lt;/a&gt; which may of help.&lt;/p&gt;
+
+&lt;h3 id=&quot;step-3---reading-microsoft-docs--watch-videos&quot;&gt;Step 3 - Reading Microsoft Docs / Watch Videos&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/azure&quot;&gt;Microsoft Docs&lt;/a&gt; is the hands-down the best place to get detailed information about each product / feature.&lt;/p&gt;
+
+&lt;p&gt;Here you can find the facts / figures / offerings / limitations for each service.
+It also comes with supplementary tutorials which you can follow for further hands-on practice.&lt;/p&gt;
+
+&lt;p&gt;You can also refer to the following links for  Microsoft Docs links to each item in the Exam Skills Outline:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://ravikirans.com/dp-200-study-guide/&quot;&gt;DP-200&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://ravikirans.com/dp-201-study-guide/&quot;&gt;DP-201&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Videos are great especially as it is visually easier than reading text which tend to get boring.&lt;/p&gt;
+
+&lt;p&gt;Here are some useful videos:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://app.pluralsight.com/paths/certificate/microsoft-azure-data-engineer-dp-200&quot;&gt;Pluralsight DP-200 Path&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://app.pluralsight.com/paths/certificate/azure-data-solution-dp-201&quot;&gt;Pluralsight DP-201 Path&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/channel/UCdmEIMC3LBil4o0tjaTbj0w/videos&quot;&gt;Azure4Everyone Youtube Channel - Clear explanation&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/user/NTFAQGuy/videos&quot;&gt;John Savill’s Youtube Channel&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;step-4---further-practice-with-official-microsoft-labs&quot;&gt;Step 4 - Further practice with official Microsoft Labs&lt;/h3&gt;
+
+&lt;p&gt;Microsoft also provided official labs for further practices:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/MicrosoftLearning/DP-200-Implementing-an-Azure-Data-Solution&quot;&gt;DP-200&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/MicrosoftLearning/DP-201-Designing-an-Azure-Data-Solution&quot;&gt;DP-201&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;It also come with solutions for each exercise for you to refer and compare your solution with.&lt;/p&gt;
+
+&lt;h3 id=&quot;step-5---supplement-learning-by-reading-up-prepared-microsoft-architecture&quot;&gt;Step 5 - Supplement learning by reading up prepared Microsoft Architecture&lt;/h3&gt;
+
+&lt;p&gt;Microsoft has a &lt;a href=&quot;https://docs.microsoft.com/en-us/azure/architecture/architectures&quot;&gt;Azure Architectures&lt;/a&gt; site which showcases a number of architectures using Azure services.&lt;/p&gt;
+
+&lt;p&gt;View some data-related architectures, study and figure why along with descriptions on how they integrate and its justifications.&lt;/p&gt;
+
+&lt;h3 id=&quot;step-6---design-and-implement-a-solution-with-all-the-services-learned&quot;&gt;Step 6 - Design and implement a solution with all the services learned&lt;/h3&gt;
+
+&lt;p&gt;As a final practice and to consolidate my understanding, I came out with an imaginary problem whereby I as a farm owner would like to find out the correlation between water produced through my farm sprinklers and the amount of harvest per farm.&lt;/p&gt;
+
+&lt;h3 id=&quot;step-7---practice-papers--memorization---the-boring-stuff&quot;&gt;Step 7 - Practice papers &amp;amp; Memorization - The boring stuff&lt;/h3&gt;
+
+&lt;p&gt;Once the above steps are completed, I will then proceed to work on some practice questions. \
+One of the best practice exam sites I love is &lt;a href=&quot;https://www.measureup.com/&quot;&gt;MeasureUp&lt;/a&gt;. \
+Main reason will be the explanation that they provide for the solutions to the questions are detailed and accurate.&lt;/p&gt;
+
+&lt;p&gt;As with any exams there will be a fair amount of memorization required. Factual stuff involving numbers such as involving limitations(minimum/maximum) must be memorized.&lt;/p&gt;
+
+&lt;h3 id=&quot;step-8---take-the-exam&quot;&gt;Step 8 - Take the Exam&lt;/h3&gt;
+
+&lt;p&gt;Once you feel comfortable you have covered everything in the checklist from Step 1 and confidently conquered all the questions in Step 7, you should be ready to take on the actual exam. Good luck and see you on the other side!&lt;/p&gt;
+
+&lt;h3 id=&quot;more-useful-resources&quot;&gt;More Useful Resources&lt;/h3&gt;
+
+&lt;p&gt;Some of the useful resources I have referred to:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.cathrinewilhelmsen.net/2019/05/29/preparing-taking-microsoft-exam-dp-200-implementing-azure-data-solution/&quot;&gt;Cathrine Wilhemlsen DP-200 Guide&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.cathrinewilhelmsen.net/2019/08/21/preparing-taking-microsoft-exam-dp-201-designing-azure-data-solution/&quot;&gt;Cathrine Wilhemlsen DP-201 Guide&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.cathrinewilhelmsen.net/series/beginners-guide-azure-data-factory/&quot;&gt;Cathrine Wilhelmsen Data Factory Series&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Bernard Lim</name></author><category term="certification" /><summary type="html">Azure Data Engineer Associate Certification Guide</summary></entry><entry><title type="html">Azure Streaming Analytics: Export / Import Streaming Analytics Jobs</title><link href="https://thebernardlim.github.io/azure/2020/01/28/azure-tips-export-import-streaming-analytics/" rel="alternate" type="text/html" title="Azure Streaming Analytics: Export / Import Streaming Analytics Jobs" /><published>2020-01-28T18:31:12+00:00</published><updated>2020-01-28T18:31:12+00:00</updated><id>https://thebernardlim.github.io/azure/2020/01/28/azure-tips-export-import-streaming-analytics</id><content type="html" xml:base="https://thebernardlim.github.io/azure/2020/01/28/azure-tips-export-import-streaming-analytics/">&lt;h1 id=&quot;export--import-streaming-analytics-job&quot;&gt;Export / Import Streaming Analytics Job&lt;/h1&gt;
+
+&lt;h2 id=&quot;exporting&quot;&gt;Exporting&lt;/h2&gt;
+
+&lt;p&gt;Unlike other services, there is no ‘Export Template’ option within the portal as shown in an example below:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/2020-01-29-azure-tips-export-import-streaming-analytics/export-template-icon.png&quot; alt=&quot;export template&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;One way to export a Streaming Analytics job is through &lt;strong&gt;Visual Studio Code&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Install &lt;strong&gt;Azure Stream Analytics Tools&lt;/strong&gt; extension through the &lt;strong&gt;Extensions&lt;/strong&gt; tab&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/2020-01-29-azure-tips-export-import-streaming-analytics/sa-icon.png&quot; alt=&quot;sa icon&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Click on the &lt;strong&gt;Azure&lt;/strong&gt; tab. &lt;strong&gt;Stream Analytics&lt;/strong&gt; extension should appear.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/2020-01-29-azure-tips-export-import-streaming-analytics/sa-extension.PNG&quot; alt=&quot;sa extension&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Sign in to your Azure account and a list of existing Streaming Analytics jobs should appear.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Browse over the job you would like to export and click on the ‘Download’ button. The job template will not be saved to your local.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/2020-01-29-azure-tips-export-import-streaming-analytics/sa-jobs.PNG&quot; alt=&quot;sa jobs&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;importing--submitting-jobs&quot;&gt;Importing / Submitting Jobs&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Open the downloaded / exported Streaming Analytics job folder in Visual Studio&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Click on the &lt;strong&gt;.asaql&lt;/strong&gt; file&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;On the top of the file, there will be a &lt;strong&gt;Submit to Azure&lt;/strong&gt; option. On click, here you can choose the subscription you would like to deploy the job to.
+&lt;img src=&quot;/assets/img/posts/2020-01-29-azure-tips-export-import-streaming-analytics/sa-submit.PNG&quot; alt=&quot;sa jobs1&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</content><author><name>Bernard Lim</name></author><category term="azure" /><summary type="html">Export / Import Streaming Analytics Job</summary></entry><entry><title type="html">Azure Data Engineer Associate Certification Study Notes</title><link href="https://thebernardlim.github.io/certification/2020/01/28/azure-data-engineer-studynotes/" rel="alternate" type="text/html" title="Azure Data Engineer Associate Certification Study Notes" /><published>2020-01-28T18:30:12+00:00</published><updated>2020-01-28T18:30:12+00:00</updated><id>https://thebernardlim.github.io/certification/2020/01/28/azure-data-engineer-studynotes</id><content type="html" xml:base="https://thebernardlim.github.io/certification/2020/01/28/azure-data-engineer-studynotes/">&lt;h1 id=&quot;azure-data-engineer-associate-certification-study-notes&quot;&gt;Azure Data Engineer Associate Certification Study Notes&lt;/h1&gt;
+
+&lt;h2 id=&quot;azure-databricks&quot;&gt;Azure Databricks&lt;/h2&gt;
+
+&lt;h3 id=&quot;cluster-modes&quot;&gt;Cluster Modes&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Standard
+    &lt;ul&gt;
+      &lt;li&gt;Terminate after 120 seconds&lt;/li&gt;
+      &lt;li&gt;Python, R, Scala, SQL&lt;/li&gt;
+      &lt;li&gt;For single users&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;High Concurrency
+    &lt;ul&gt;
+      &lt;li&gt;Do not terminate automatically&lt;/li&gt;
+      &lt;li&gt;Python, R, SQL&lt;/li&gt;
+      &lt;li&gt;For multiple users&lt;/li&gt;
+      &lt;li&gt;Fault isolation&lt;/li&gt;
+      &lt;li&gt;Task preemption for fair usage for all users&lt;/li&gt;
+      &lt;li&gt;Table Access Control - Restrict access to data to right people&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Both clusters can have credential passthrough - AD&lt;/li&gt;
+  &lt;li&gt;Cluster retention period : 30 days after termination. Pin cluster for &amp;gt; 30 days. Max 20 clusters can be pinned.&lt;/li&gt;
+  &lt;li&gt;Cluster cloning: Permissions, installed libraries, attached notebooks not cloned&lt;/li&gt;
+  &lt;li&gt;Pool : Azure Databricks pools reduce cluster start and auto-scaling times by maintaining a set of idle, ready-to-use instances.&lt;/li&gt;
+  &lt;li&gt;Job : Way of running notebook immediately / by schedule&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;access-control&quot;&gt;Access Control&lt;/h3&gt;
+
+&lt;p&gt;** Only available on Premium Plan&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Cluster access control - Default: All users can create / modify clusters unless admin enables ‘Cluster access control’&lt;/li&gt;
+  &lt;li&gt;Pool access control - Default: All users can create / modify pools unless admin enables ‘Pool access control’&lt;/li&gt;
+  &lt;li&gt;Jobs access control - Default: All users can create / modify jobs unless admin enables ‘Jobs access control’&lt;/li&gt;
+  &lt;li&gt;Table access control - Control access to data stored in cluster managed tables Default: All users have access to all data stored in a cluster’s managed tables unless an administrator enables table access control for that cluster.&lt;/li&gt;
+  &lt;li&gt;Workspace access control - Control access to create / modify notebooks,  folders. Default: All users can create / modify workspace objects unless admin enables ‘Workspace access control’&lt;/li&gt;
+  &lt;li&gt;Token-based auth: For REST APIs&lt;/li&gt;
+  &lt;li&gt;Conditional Access&lt;/li&gt;
+  &lt;li&gt;Data Lake Storage Credential Passthrough - Use AD Identity used in Databricks for Data Lake&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;security&quot;&gt;Security&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;To access APIs, use access tokens&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;azure-storage&quot;&gt;Azure Storage&lt;/h2&gt;
+
+&lt;h3 id=&quot;tiers&quot;&gt;Tiers&lt;/h3&gt;
+
+&lt;p&gt;Cool - At least 30 days. Milliseconds to retrieve. \
+Archive - At least 180 days. Hours to retrieve.&lt;/p&gt;
+
+&lt;h3 id=&quot;rehydration-options&quot;&gt;Rehydration options&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Standard Priority: 15 hours&lt;/li&gt;
+  &lt;li&gt;High Priority: 1 hour&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Blob storage not supported by ZRS or GZRS \
+SAS does not support Azure Files \
+Azure AD does not support Azure Files (REST), Azure Tables&lt;/p&gt;
+
+&lt;h3 id=&quot;accessing-storage&quot;&gt;Accessing Storage&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Account SAS: Access to multiple resources in 1 or more storage services&lt;/li&gt;
+  &lt;li&gt;Service SAS: Access to specific storage account resource&lt;/li&gt;
+  &lt;li&gt;User delegation SAS: Secured with Azure AD credentials.&lt;/li&gt;
+  &lt;li&gt;Primary/Secondary Storage: Full access to storage acct, including ability to modify/delete resources on it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;*** If access key is regenerated, Account SAS, Service SAS and Shared Key will be impacted&lt;/p&gt;
+
+&lt;h2 id=&quot;azure-data-lake&quot;&gt;Azure Data Lake&lt;/h2&gt;
+
+&lt;h3 id=&quot;access-control-1&quot;&gt;Access Control&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;RBAC : Container Level&lt;/li&gt;
+  &lt;li&gt;ACL : Folder Level&lt;/li&gt;
+  &lt;li&gt;Shared Key : ‘Super-User’ access to all operations on all resources&lt;/li&gt;
+  &lt;li&gt;SAS&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;others&quot;&gt;Others&lt;/h3&gt;
+
+&lt;p&gt;Recommended file size: &amp;gt;256 MB&lt;/p&gt;
+
+&lt;h2 id=&quot;azure-managed-disk-types&quot;&gt;Azure Managed Disk Types&lt;/h2&gt;
+
+&lt;p&gt;Used with Azure VMs&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Ultra SSD
+    &lt;ul&gt;
+      &lt;li&gt;Disk Size: 65,536 GiB&lt;/li&gt;
+      &lt;li&gt;Throughput: 2,000 MiB/s&lt;/li&gt;
+      &lt;li&gt;IOPS: 160,000&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Premium SSD
+    &lt;ul&gt;
+      &lt;li&gt;Disk Size: 32,767 GiB&lt;/li&gt;
+      &lt;li&gt;Throughput: 900 MiB/s&lt;/li&gt;
+      &lt;li&gt;IOPS: 20,000&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Standard SSD
+    &lt;ul&gt;
+      &lt;li&gt;Disk Size: 32,767 GiB&lt;/li&gt;
+      &lt;li&gt;Throughput: 750 MiB/s&lt;/li&gt;
+      &lt;li&gt;IOPS: 6,000&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Standard HDD
+    &lt;ul&gt;
+      &lt;li&gt;Disk Size: 32,767 GiB&lt;/li&gt;
+      &lt;li&gt;Throughput: 500 MiB/s&lt;/li&gt;
+      &lt;li&gt;IOPS: 2,000&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;sql-server&quot;&gt;SQL Server&lt;/h2&gt;
+
+&lt;h3 id=&quot;encryption-types&quot;&gt;Encryption Types&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Always Encrypted: Encrypt sensitive data in client apps without revealing encryption keys to DB engine, providing separation between data owners and data managers.&lt;/li&gt;
+  &lt;li&gt;Column-Level encryption - Uses function on server. Data can be seen by DBA.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;backup-types&quot;&gt;Backup Types&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Full Backup&lt;/li&gt;
+  &lt;li&gt;Differential Backup: Only backup what is different from previous full backup&lt;/li&gt;
+  &lt;li&gt;Partial Backup : Only Primary Filegroup backed up&lt;/li&gt;
+  &lt;li&gt;Transaction Logs : Holds all transactions&lt;/li&gt;
+  &lt;li&gt;Tail-end of transaction logs : Log records that have yet to be backed up&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;azure-sql-db-managed-instance&quot;&gt;Azure SQL DB Managed Instance&lt;/h2&gt;
+
+&lt;h3 id=&quot;backup&quot;&gt;Backup&lt;/h3&gt;
+
+&lt;p&gt;No geo-replication for Azure SQL Database Managed Instance&lt;/p&gt;
+
+&lt;h3 id=&quot;auditing&quot;&gt;Auditing&lt;/h3&gt;
+
+&lt;p&gt;To audit Azure SQL Database Managed Instance:&lt;/p&gt;
+
+&lt;p&gt;1) Create SAS
+2) T-SQL: Create Credentials where SECRET is SAS
+3) T-SQL: Create Server Audit&lt;/p&gt;
+
+&lt;h2 id=&quot;azure-cosmosdb&quot;&gt;Azure CosmosDB&lt;/h2&gt;
+
+&lt;h3 id=&quot;slas&quot;&gt;SLAs&lt;/h3&gt;
+
+&lt;p&gt;Write - Single / Read - Single: 99.99%, 99.99% \
+Write - Single / Read - Multi: 99.99%, 99.999% \
+Write - Multi / Read - Multi: 99.999%, 99.999%&lt;/p&gt;
+
+&lt;h2 id=&quot;azure-sql-data-warehouse&quot;&gt;Azure SQL Data Warehouse&lt;/h2&gt;
+
+&lt;h3 id=&quot;backup-1&quot;&gt;Backup&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Automatic Restore Points : No configuration required. 7 days retention period. RPO: 8 hours&lt;/li&gt;
+  &lt;li&gt;User-Defined Restore Points: Manual trigger snapshots. Max 42 user-defined restore points. 7 day retention period. Can use Azure Portal to create.&lt;/li&gt;
+  &lt;li&gt;When data warehouse deleted, final snapshot created which will be retained for 7 days only&lt;/li&gt;
+  &lt;li&gt;Geo-Backups happen once per day to paired data center. RPO: 24 hours.&lt;/li&gt;
+  &lt;li&gt;On restore, firewall rules need to be re-created.&lt;/li&gt;
+  &lt;li&gt;Recommended file size : 256MB to 2GB&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;azure-sql&quot;&gt;Azure SQL&lt;/h2&gt;
+
+&lt;h3 id=&quot;service-tiers&quot;&gt;Service Tiers&lt;/h3&gt;
+
+&lt;p&gt;Basic, Standard, Premium \
+Storage Size: 2 GB, 1 TB, 4 TB \
+Max DTUs: / eDTUs per DB 5, 3000, 4000 \
+Max Backup Retention: 7 days, 35 days, 35 days \
+IO Latency: 5ms(read) &amp;amp; 10ms(write), 2 ms(read/write) \&lt;/p&gt;
+
+&lt;p&gt;Basic, Standard, General - Compute/Storage resources separated
+Premium, Business Critical - Compute/Storage integrated&lt;/p&gt;
+
+&lt;p&gt;Hyperscale - DB Size up to 100 TB. Use when DB size &amp;gt; 4 TB&lt;/p&gt;
+
+&lt;p&gt;** In-memory OLTP only supported by Premium tier \
+** Premium tier integrates storage / compute resources &amp;amp; replicates together \
+** Use contained users for AAD authentication to Azure SQL
+A contained database user based on an Azure AD identity, is a database user that does not have a login in the master database, and which maps to an identity in the Azure AD directory that is associated with the database. Eg: To create contained user: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CREATE USER [bob@contoso.com] FROM EXTERNAL PROVIDER;&lt;/code&gt; \
+Before creating contained user, need to set admin to AD User through UI Portal. \
+** Dynamic Scalability : Manually change resource limits, etc without downtime \&lt;/p&gt;
+
+&lt;h3 id=&quot;auditing-vs-diagnostics&quot;&gt;Auditing vs Diagnostics&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Auditing:&lt;/strong&gt; Retain an audit trail of selected events. You can define categories of database actions to be audited.
+Report on database activity. You can use pre-configured reports and a dashboard to get started quickly with activity and event reporting.
+Analyze reports. You can find suspicious events, unusual activity, and trends. \&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Diagnostics:&lt;/strong&gt; Performance monitoring. CPU percentage, usage etc&lt;/p&gt;
+
+&lt;h3 id=&quot;backup-2&quot;&gt;Backup&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Long-term retention not available on Azure SQL DB Managed Instance - Up to 10 years&lt;/li&gt;
+  &lt;li&gt;Geo-Redundancy : Cheaper option for backup - if DB ok to be offline for a period of time&lt;/li&gt;
+  &lt;li&gt;Geo-Replication: More expensive option&lt;/li&gt;
+  &lt;li&gt;Automated Backups - Up to 35 days only&lt;/li&gt;
+  &lt;li&gt;When under TDE, offline files are still encrypted&lt;/li&gt;
+  &lt;li&gt;Point-in-time restore = Full Backup + Differential Backup + Transaction Log Backup&lt;/li&gt;
+  &lt;li&gt;Full Backup: Weekly, Differential Backup: Every 12 Hours, Transaction Logs: Every 5-10 minutes&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;azure-functions&quot;&gt;Azure Functions&lt;/h2&gt;
+
+&lt;h3 id=&quot;plans&quot;&gt;Plans&lt;/h3&gt;
+&lt;p&gt;Consumption - Scale Out automatically. Only pay when functions running. \
+Premium - Require constant running of functions. Require more power. VNet Connectivity. \
+Dedicated (App Service) Plan - When there are under-utilized VMs running in other App Service instances. Manual scaling.&lt;/p&gt;
+
+&lt;h2 id=&quot;database---general&quot;&gt;Database - General&lt;/h2&gt;
+
+&lt;h3 id=&quot;optimization&quot;&gt;Optimization&lt;/h3&gt;
+
+&lt;p&gt;Choosing Distribution column:\
+https://docs.microsoft.com/en-us/azure/sql-data-warehouse/sql-data-warehouse-tables-distribute&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Column where heavily used in JOINs&lt;/li&gt;
+  &lt;li&gt;Not in WHERE clause&lt;/li&gt;
+  &lt;li&gt;Not a DATE column&lt;/li&gt;
+  &lt;li&gt;Has many unique values (Column should have at least 60 unique values)&lt;/li&gt;
+  &lt;li&gt;Does not have NULLs, or only few NULLs&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Choosing Partition key: \
+https://docs.microsoft.com/en-us/azure/cosmos-db/partitioning-overview&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Choose a partition key that has a wide range of values and access patterns that are evenly spread across logical partitions.&lt;/li&gt;
+  &lt;li&gt;Choose a partition key that spreads the workload evenly across all partitions and evenly over time.&lt;/li&gt;
+  &lt;li&gt;Candidates for partition keys might include properties that appear frequently as a filter in your queries.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Use non-clustered indexes to improve analytics performance
+https://docs.microsoft.com/en-us/azure/sql-database/sql-database-in-memory&lt;/p&gt;
+
+&lt;h3 id=&quot;migration&quot;&gt;Migration&lt;/h3&gt;
+
+&lt;p&gt;Azure Database Migration Service - Migrating with minimal disruptions. Source DB remains online.&lt;/p&gt;
+
+&lt;h2 id=&quot;azure-ad&quot;&gt;Azure AD&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Privileged Identity Management - JIT privileged access to resources / AD&lt;/li&gt;
+  &lt;li&gt;Identity Protection - Automate detection / remediation of identity-based risks, investigate risks, export risk data to 3rd party utilities.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Bernard Lim</name></author><category term="certification" /><summary type="html">Azure Data Engineer Associate Certification Study Notes</summary></entry></feed>
